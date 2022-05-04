@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="93cb3b23-2583-4f73-ad40-c37ce1b51792" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Script" searchProperties="true" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="93cb3b23-2583-4f73-ad40-c37ce1b51792fileName">Script</con:setting></con:settings><con:testStep type="groovy" name="Groovy Script" id="f0e3156a-aa8a-40c9-b80e-0c00ac30f7b7"><con:settings/><con:config><script>import com.eviware.soapui.support.XmlHolder
+import com.eviware.soapui.impl.wsdl.testcase.WsdlTestRunContext
+
+def getTestStep= testRunner.testCase.testSuite.testCases["GetEmployee"].testSteps["get"];
+
+def contextGetEmployee= new WsdlTestRunContext(getTestStep);
+getTestStep.run(testRunner,contextGetEmployee)
+
+//Validation -
+ def getRes=testRunner.testCase.testSuite.testCases["GetEmployee"].testSteps["get"].getPropertyValue("Response")
+ 
+def getEmpRes= new XmlHolder(getRes)
+def Getresponse= getEmpRes.getNodeValue("//ns:name")
+log.info Getresponse
+
+def name= testRunner.testCase.testSuite.getPropertyValue("name")
+
+assert Getresponse==name
+
+//Delete - 
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+</script></con:config></con:testStep><con:properties><con:property><con:name>name</con:name><con:value>Toy</con:value></con:property><con:property><con:name>age</con:name><con:value>25</con:value></con:property><con:property><con:name>dept</con:name><con:value>it</con:value></con:property></con:properties><con:reportParameters/></con:testCase>

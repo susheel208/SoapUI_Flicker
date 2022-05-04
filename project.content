@@ -1,0 +1,8 @@
+EmployeeManagementServiceSoap12Binding\addEmployee.xml
+EmployeeManagementServiceSoap12Binding\deleteEmployee.xml
+EmployeeManagementServiceSoap12Binding\getEmployeeDetails.xml
+EmployeeManagementServiceSoap11Binding\addEmployee.xml
+EmployeeManagementServiceSoap11Binding\deleteEmployee.xml
+EmployeeManagementServiceSoap11Binding\getEmployeeDetails.xml
+Testing\GetEmployee.xml
+Testing\Script.xml
